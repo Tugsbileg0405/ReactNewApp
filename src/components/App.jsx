@@ -7,14 +7,17 @@ import store from '../store.jsx';
 import Nav from './Nav/Nav.jsx';
 import Home from './Home/Home.jsx';
 import NoMatch from './NoMatch/NoMatch.jsx';
-
+import About from './About/About.jsx';
+import SignIn from './SignIn/SignIn.jsx'
 class App extends React.Component {
-   render() {
-       const routes =
-      <Route component= {Nav} path="/">
+  render() {
+    const routes =
+      <Route component={Nav} path="/">
         <IndexRoute component={Home} />
-         <Route path = "home" component = {Home} />
-         <Route path="*" component={NoMatch} />
+        <Route path="home" component={Home} />
+        <Route path="about" component={About} />
+        <Route path="signin" component={SignIn} />
+        <Route path="*" component={NoMatch} />
       </Route>;
     return (
       <Provider store={store}>
@@ -23,7 +26,7 @@ class App extends React.Component {
         </Router>
       </Provider>
     )
-   }
+  }
 }
 
 export default App;
